@@ -30,78 +30,92 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active">
-							<a href="#">Link</a>
+							<a href="#">Job Request</a>
 						</li>
 						<li>
-							<a href="#">Link</a>
+							<a href="#">Sign Up</a>
 						</li>
+						<li>
+							<a> Login </a>
+						</li>
+						<div class="container">
+						<label><b>Username</b></label>
+						<input type="text" placeholder="Enter Username" name="uname" required>
+
+						<label><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="psw" required>
+
+						<button type="submit">Login</button>
+						<input type="checkbox" checked="checked"> Remember me</div>
+						
+						<div class="container" style="background-color:#f1f1f1">
+						<button type="button" class="cancelbtn">Cancel</button>
+						<span class="psw">Forgot <a href="#">password?</a></span>
+						</div>
+						
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search?<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="#">Action</a>
+									<a href="#">City Search</a>
 								</li>
 								<li>
-									<a href="#">Another action</a>
+									<a href="#">Area Search</a>
 								</li>
 								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">One more separated link</a>
+									<a href="#">Country Search</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input class="form-control" type="text">
-						</div> 
-						<button type="submit" class="btn btn-default">
-							Submit
-						</button>
+					
+					<form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)">
+
+						<p>Google Search:<br />
+						<input id="hiddenquery" type="hidden" name="q" />
+						<input name="qfront" type="text" style="width: 200px" value="" /> <input type="submit" value="Search" /><br />
+						<script type="text/javascript">
+
+						var domainroot="www.javascriptkit.com"
+
+						var searchaction=[
+						"http://www.google.com/search",
+
+						]
+
+						var queryfieldname=["q","p","q"]
+
+						function switchaction(cur, index){
+						cur.form.action=searchaction[index]
+						document.getElementById("hiddenquery").name=queryfieldname[index]
+						}
+
+						function jksitesearch(curobj){
+						for (i=0; i< document.jksearch.se.length; i++){ //loop through radio to see which is checked
+						if (document.jksearch.se[i].checked==true)
+						switchaction(document.jksearch.se[i], i)
+						}
+						document.getElementById("hiddenquery").value="site:"+domainroot+" "+curobj.qfront.value
+						}
+
+
+						</script>
+						</p>
+
 					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="#">Link</a>
-						</li>
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+
+						<p style="font: normal 11px Arial">This free script provided by<br />
+						<a href="http://www.javascriptkit.com">JavaScript Kit</a></p>
+					
+
 				</div>
 				
-			</nav><img alt="Bootstrap Image Preview" src="My Logo.png">
+			</nav><img alt="Logo" src="My Logo.png">
 			<div class="jumbotron well">
 				<h2>
 					Welcome, To Hire A Professional!
 				</h2> This Website is Designed to Help those of you looking for jobs, or for those of you who are looking for someone to do a job for You! just use our simple service to start looking!<br><br>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
+
 			</div>
 		</div>
 	</div>
@@ -111,10 +125,7 @@
 				Looking For Work!
 			</h2>
 			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
+				Hello There, If your looking for work please use the search function in the dropdown menu at the top of the page. If the search function doesn't work, or if your unsatisfied, there is another search function that uses Google to find Job postings.
 			</p>
 		</div>
 		<div class="col-md-4">
@@ -122,21 +133,16 @@
 				Looking For a Job Done?
 			</h2>
 			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				Hello, If your looking to post a job request please use the link at the top of the page.
 			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
-			</p>
+
 		</div>
 		<div class="col-md-4">
 			<h2>
 				Information.
 			</h2>
 			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
+				The Purpose of this website is to allow the users to either look for work that is close by, or to post jobs that you would like done.
 			</p>
 		</div>
 	</div>
